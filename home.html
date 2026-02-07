@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Recommendation - Home</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        /* Background image (Unsplash) - replace with your own if desired */
+        body {
+            background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1950&q=80&ixlib=rb-4.0.3&s=7a6d63f1f6c8fb69f4e7d5b5f7a2b5f6');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+        .overlay {
+            background: rgba(0, 0, 0, 0.45);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+        .intro {
+            max-width: 900px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 48px;
+            margin: 0 0 8px 0;
+        }
+        p.lead {
+            font-size: 18px;
+            margin: 0 0 16px 0;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-links a {
+            color: white;
+            margin-right: 16px;
+            text-decoration: none;
+            font-weight: bold;
+            opacity: 0.95;
+        }
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        .credit {
+            margin-top: 20px;
+            font-size: 12px;
+            opacity: 0.8;
+        }
+        .results {
+            margin-top: 24px;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.92);
+            color: #1f1f1f;
+            border-radius: 10px;
+            padding: 16px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+        }
+        .results-header {
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+        .result-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #e6e6e6;
+        }
+        .result-item:last-child {
+            border-bottom: none;
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 32px; }
+            p.lead { font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="search-form" role="search" aria-label="Search recommendations">
+            <input type="text" id="searchInput" placeholder="Search recommendations..." aria-label="Search keywords">
+            <button id="searchBtn" class="search-btn">Search</button>
+            <button id="clearBtn" class="clear-btn">Clear</button>
+            <button id="resetBtn" class="reset-btn">Reset</button>
+        </div>
+    </nav>
+
+    <div class="overlay">
+        <div class="intro">
+            <h1>Discover Your Next Adventure</h1>
+            <p class="lead">Use our travel recommendation tool to find destinations, plan family trips, and discover budget-friendly options tailored to your interests. Enter a keyword, explore curated suggestions, and get inspired for your next journey.</p>
+
+            <a class="cta-button" href="travel_recommendation.html">Get Recommendations</a>
+
+            <div id="results" class="results" aria-live="polite"></div>
+
+            <div class="credit">
+                Background photo by <a href="https://unsplash.com/" target="_blank" rel="noopener noreferrer" style="color: #fff; text-decoration: underline;">Unsplash</a>.
+            </div>
+        </div>
+    </div>
+    <script src="travel_recommendation.js"></script>
+</body>
+</html>

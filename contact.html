@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Travel Recommendation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1950&q=80&ixlib=rb-4.0.3&s=7a6d63f1f6c8fb69f4e7d5b5f7a2b5f6');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #333;
+        }
+        nav {
+            background-color: #2c3e50;
+            color: white;
+            padding: 12px 20px;
+        }
+        .nav-links a {
+            color: white;
+            margin-right: 16px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .nav-links a:hover { text-decoration: underline; }
+        .container {
+            max-width: 700px;
+            margin: 30px auto;
+            background: white;
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
+        h1 { margin-top: 0; }
+        form { display: grid; gap: 12px; }
+        label { font-weight: bold; font-size: 14px; }
+        input[type="text"], input[type="email"], textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        textarea { min-height: 140px; resize: vertical; }
+        .btn {
+            display: inline-block;
+            padding: 10px 16px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+        }
+        .submit-btn { background-color: #3498db; }
+        .reset-btn { background-color: #e74c3c; margin-left: 8px; }
+        .form-actions { display: flex; align-items: center; }
+        .message { padding: 10px; border-radius: 4px; margin-top: 8px; display: none; }
+        .message.success { background-color: #e8f8f5; color: #006644; border: 1px solid #bdecd7; display: block; }
+        .message.error { background-color: #fdecea; color: #a60000; border: 1px solid #f5c2c2; display: block; }
+        @media (max-width: 480px) {
+            .container { margin: 16px; padding: 16px; }
+            .form-actions { flex-direction: column; align-items: stretch; }
+            .reset-btn { margin-left: 0; margin-top: 8px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-links" aria-label="Main navigation">
+            <a href="home.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1>Contact Us</h1>
+        <p>If you have questions or want to work with us, fill out the form below and we'll get back to you.</p>
+
+        <form id="contactForm" novalidate>
+            <div>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your full name" required aria-required="true">
+            </div>
+
+            <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required aria-required="true">
+            </div>
+
+            <div>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Write your message here..." required aria-required="true"></textarea>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn submit-btn">Submit</button>
+                <button type="button" id="resetBtn" class="btn reset-btn">Reset</button>
+            </div>
+
+            <div id="formMessage" role="status" aria-live="polite" class="message"></div>
+        </form>
+    </main>
+
+    <script>
+        (function() {
+            const form = document.getElementById('contactForm');
+            const resetBtn = document.getElementById('resetBtn');
+            const msg = document.getElementById('formMessage');
+
+            function showMessage(text, type) {
+                msg.textContent = text;
+                msg.className = 'message ' + (type === 'success' ? 'success' : 'error');
+                msg.style.display = 'block';
+            }
+
+            function clearMessage() {
+                msg.textContent = '';
+                msg.className = 'message';
+                msg.style.display = 'none';
+            }
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                clearMessage();
+
+                const name = form.name.value.trim();
+                const email = form.email.value.trim();
+                const message = form.message.value.trim();
+
+                if (!name || !email || !message) {
+                    showMessage('Please complete all fields before submitting.', 'error');
+                    return;
+                }
+
+                // Basic email pattern check
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(email)) {
+                    showMessage('Please enter a valid email address.', 'error');
+                    return;
+                }
+
+                // Simulate successful submission (replace with real submission logic)
+                showMessage('Thanks, ' + name + '! Your message has been received. We will contact you at ' + email + '.', 'success');
+                form.reset();
+            });
+
+            resetBtn.addEventListener('click', function() {
+                form.reset();
+                clearMessage();
+                form.name.focus();
+            });
+        })();
+    </script>
+</body>
+</html>

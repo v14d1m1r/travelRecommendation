@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Recommendation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1950&q=80&ixlib=rb-4.0.3&s=7a6d63f1f6c8fb69f4e7d5b5f7a2b5f6');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .navbar {
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+        .nav-links a {
+            color: white;
+            margin-right: 16px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        .search-form {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+        .search-form input[type="text"] {
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            min-width: 240px;
+        }
+        .search-form button {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            color: white;
+        }
+        .clear-btn {
+            background-color: #95a5a6;
+        }
+        .search-btn {
+            background-color: #3498db;
+        }
+        .reset-btn {
+            background-color: #e74c3c;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        #results {
+            margin-top: 16px;
+        }
+        .results-header {
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #333;
+        }
+        .result-item {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 8px;
+        }
+    </style> 
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="search-form" role="search" aria-label="Search recommendations">
+            <input type="text" id="searchInput" placeholder="Search recommendations..." aria-label="Search keywords">
+            <button id="searchBtn" class="search-btn">Search</button>
+            <button id="clearBtn" class="clear-btn">Clear</button>
+            <button id="resetBtn" class="reset-btn">Reset</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Travel Recommendation</h1>
+        <p>Welcome to the travel recommendation application.</p>
+
+        <div id="results" aria-live="polite"></div>
+    </div>
+
+    <script src="travel_recommendation.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Travel Recommendation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1950&q=80&ixlib=rb-4.0.3&s=7a6d63f1f6c8fb69f4e7d5b5f7a2b5f6');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #333;
+        }
+        nav {
+            background-color: #2c3e50;
+            color: white;
+            padding: 12px 20px;
+        }
+        .nav-links a {
+            color: white;
+            margin-right: 16px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .nav-links a:hover { text-decoration: underline; }
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            background: white;
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
+        h1 { margin-top: 0; }
+        .company-info {
+            margin-bottom: 18px;
+            line-height: 1.6;
+        }
+        .team {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+        .team-member {
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #e6e6e6;
+            background: #fafafa;
+        }
+        .member-name { font-weight: bold; margin-bottom: 6px; }
+        .member-role { color: #666; font-size: 14px; }
+        .contact-note { margin-top: 16px; font-size: 14px; }
+        @media (max-width: 480px) {
+            .container { margin: 16px; padding: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-links" aria-label="Main navigation">
+            <a href="home.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1>About Us</h1>
+        <section class="company-info">
+            <p>
+                Travel Recommendation helps explorers of all kinds find their next destination. We combine curated suggestions, expert travel tips, and easy-to-use search features to provide personalized recommendations tailored to your interests and budget.
+            </p>
+            <p>
+                Our mission is to inspire travel by making destination discovery simple, practical, and delightful. Whether you're planning a family vacation, a weekend getaway, or a solo adventure, we're here to help you find the perfect match.
+            </p>
+        </section>
+
+        <section>
+            <h2>Meet the Team</h2>
+            <div class="team" aria-label="Team members">
+                <article class="team-member">
+                    <div class="member-name">Aisha Khan</div>
+                    <div class="member-role">Founder & CEO</div>
+                    <p class="member-bio">Aisha leads the product vision and partnerships, focusing on creating helpful experiences for travelers worldwide.</p>
+                </article>
+
+                <article class="team-member">
+                    <div class="member-name">Miguel Santos</div>
+                    <div class="member-role">Lead Developer</div>
+                    <p class="member-bio">Miguel designs and builds the platform, ensuring the search and recommendation systems are fast and reliable.</p>
+                </article>
+
+                <article class="team-member">
+                    <div class="member-name">Priya Desai</div>
+                    <div class="member-role">Head of Content</div>
+                    <p class="member-bio">Priya curates destination guides and writes practical tips that help travelers plan better trips.</p>
+                </article>
+
+                <article class="team-member">
+                    <div class="member-name">Liam O'Connor</div>
+                    <div class="member-role">UX Designer</div>
+                    <p class="member-bio">Liam focuses on creating clear and accessible designs so users can find recommendations with ease.</p>
+                </article>
+            </div>
+
+            <p class="contact-note">Want to join our team? Check out the <a href="contact.html">Contact Us</a> page to get in touch.</p>
+        </section>
+    </main>
+</body>
+</html>
